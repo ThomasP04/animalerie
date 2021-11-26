@@ -1,0 +1,43 @@
+.animalerie{
+    color: #FA1809;
+    font-family: 'Lobster';
+}
+
+h1{
+    color:#240ED2;
+    font-family: 'Lobster';
+}
+
+.nom_animal{
+    color:rgb(231, 22, 162);
+    font-family: 'Lobster';
+}
+
+.liste_animaux{
+    float:left;
+}
+
+.liste_equipements{
+    float:left;
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+}
+
+.content-colonne-gauche{
+    display: flex;
+    flex-direction: column;
+}
+
+.content-colonne-droite{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.colonne-vide{
+    display: flex;
+    flex: 1;
+}

@@ -1,0 +1,33 @@
+{% extends 'jeu/base.html' %}
+{% load static %}
+{% block content %}
+<div class="page-header">
+    
+        <a href="/"><h2 class="nom_animal">{{ animal.id_animal }}</h2></a>
+    
+
+    <div class="animal">
+        <b> Informations : </b>
+        <p>Etat &#128528; : {{ animal.etat}}</p>
+        <p>Lieu 🏠  : {{ animal.lieu}}</p>
+        <p>Type  🐵 : {{ animal.type}}</p>
+        <p>Race  🦉 : {{ animal.race}}</p>
+    </div>
+
+
+    <form method="POST" class="post-form">{% csrf_token %}
+        <b> Changer : </b> {{ form.as_ul }}
+        <button type="submit" class="btn btn-outline-light">OK</button>
+        <a href="{% url 'post_list' %}">Back</a>
+    </form>
+</div>
+
+{% if messages%}
+    <div class="messages">
+        {% for message in messages %}
+        <h4 {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</h4>
+{% endfor %}
+    </div>
+{% endif %} 
+ 
+{% endblock %}

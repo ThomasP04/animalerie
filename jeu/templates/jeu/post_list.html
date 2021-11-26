@@ -1,0 +1,32 @@
+{% extends 'jeu/base.html' %}
+{% load static %}
+
+
+{% block content %}
+<div class="container">
+    <div class="content-colonne-gauche">
+        <h1 class=liste_animaux>Tous les animaux</h1>
+            {% for animal in animals %}
+                <div>
+                    <h2 class=nom_animal>Nom: {{ animal.id_animal }}</h2>
+                    <img src={{ animal.photo }}/>
+                    <p>Etat: {{ animal.etat}}</p>
+                    <p>Lieu: {{ animal.lieu}}</p>
+                    <a href="{% url 'animal_detail' id_animal=animal.id_animal %}">Informations et actions</a>
+                </div>
+            {% endfor %}
+    </div>
+    <div class="colonne-vide"></div>
+    <div class="content-colonne-droite">
+        <h1 class=liste_equipements>Tous les équipements</h1>
+            {% for equipement in equipements %}
+                <div>
+                    <h2 class=nom_animal>Nom: {{ equipement.id_equip }}</h2>
+                    <img src={{ equipement.photo }}/>
+                    <p>Disponibilité: {{equipement.disponibilite}}</p>
+
+                </div>
+            {% endfor %}
+    </div>
+</div>
+{% endblock %}
